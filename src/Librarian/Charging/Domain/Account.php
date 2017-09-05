@@ -54,9 +54,9 @@ class Account extends AggregateRoot
 
     private function canBeCharged($moneyToCharge)
     {
-        if (AccountState::ACTIVE()->equals($this->state)) {
+//        if (AccountState::ACTIVE()->equals($this->state)) {
             return true;
-        }
+//        }
     }
 
     public function discharge(Money $moneyToDischarge)

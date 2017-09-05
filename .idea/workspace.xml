@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04bb3589-b646-4273-b137-b1f1506d3aed" name="Default" comment="" />
+    <list default="true" id="04bb3589-b646-4273-b137-b1f1506d3aed" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Librarian/Charging/Domain/Account.php" afterPath="$PROJECT_DIR$/src/Librarian/Charging/Domain/Account.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,25 +34,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Account.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Librarian/Charging/Domain/Account.php">
+      <file leaf-file-name="projection.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="138" column="1" lean-forward="true" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
-              <folding>
-                <element signature="e#882#1195#0#PHP" expanded="true" />
-                <element signature="e#1201#1353#0#PHP" expanded="true" />
-                <element signature="e#1359#1531#0#PHP" expanded="true" />
-                <element signature="e#1537#1621#0#PHP" expanded="true" />
-                <element signature="e#1627#1840#0#PHP" expanded="true" />
-                <element signature="e#1846#1914#0#PHP" expanded="true" />
-                <element signature="e#1920#2115#0#PHP" expanded="true" />
-                <element signature="e#2121#2187#0#PHP" expanded="true" />
-                <element signature="e#2193#2234#0#PHP" expanded="true" />
-                <element signature="e#2240#2318#0#PHP" expanded="true" />
-                <element signature="e#2324#2402#0#PHP" expanded="true" />
-                <element signature="e#2408#3216#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="209">
+              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,6 +51,12 @@
       <find>exce</find>
       <find>reposi</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -76,7 +72,6 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/vendor/prooph/pdo-event-store/scripts/mysql/02_projections_table.sql" />
         <option value="$PROJECT_DIR$/src/Librarian/Charging/Infrastructure/EventSoursed.php" />
-        <option value="$PROJECT_DIR$/projection.php" />
         <option value="$PROJECT_DIR$/src/Librarian/Charging/Domain/Event/AccountCharged.php" />
         <option value="$PROJECT_DIR$/vendor/prooph/event-sourcing/src/AggregateChanged.php" />
         <option value="$PROJECT_DIR$/setup.php" />
@@ -84,6 +79,7 @@
         <option value="$PROJECT_DIR$/src/Librarian/Charging/Domain/AccountRepository.php" />
         <option value="$PROJECT_DIR$/demo.php" />
         <option value="$PROJECT_DIR$/src/Librarian/Charging/Domain/Account.php" />
+        <option value="$PROJECT_DIR$/projection.php" />
       </list>
     </option>
   </component>
@@ -248,17 +244,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.demo.php">
+  <component name="RunManager" selected="PHP Script.projection.php">
     <configuration name="demo.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/demo.php" />
+    <configuration name="projection.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/projection.php" />
     <configuration name="setup.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/setup.php" />
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="PHP Script.demo.php" />
       <item index="1" class="java.lang.String" itemvalue="PHP Script.setup.php" />
+      <item index="2" class="java.lang.String" itemvalue="PHP Script.projection.php" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.demo.php" />
-        <item index="1" class="java.lang.String" itemvalue="PHP Script.setup.php" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.projection.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.demo.php" />
+        <item index="2" class="java.lang.String" itemvalue="PHP Script.setup.php" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +282,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20172000" />
+    <option name="totallyTimeSpent" value="20612000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -304,11 +303,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="133" y="356" width="1878" height="297" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3611111" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3611111" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Key Promoter X" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -537,9 +536,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -568,17 +565,17 @@
           <caret line="138" column="1" lean-forward="true" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
           <folding>
             <element signature="e#882#1195#0#PHP" expanded="true" />
-            <element signature="e#1201#1353#0#PHP" expanded="true" />
-            <element signature="e#1359#1531#0#PHP" expanded="true" />
-            <element signature="e#1537#1621#0#PHP" expanded="true" />
-            <element signature="e#1627#1840#0#PHP" expanded="true" />
-            <element signature="e#1846#1914#0#PHP" expanded="true" />
-            <element signature="e#1920#2115#0#PHP" expanded="true" />
-            <element signature="e#2121#2187#0#PHP" expanded="true" />
-            <element signature="e#2193#2234#0#PHP" expanded="true" />
-            <element signature="e#2240#2318#0#PHP" expanded="true" />
-            <element signature="e#2324#2402#0#PHP" expanded="true" />
-            <element signature="e#2408#3216#0#PHP" expanded="true" />
+            <element signature="e#1201#1357#0#PHP" expanded="true" />
+            <element signature="e#1363#1535#0#PHP" expanded="true" />
+            <element signature="e#1541#1625#0#PHP" expanded="true" />
+            <element signature="e#1631#1844#0#PHP" expanded="true" />
+            <element signature="e#1850#1918#0#PHP" expanded="true" />
+            <element signature="e#1924#2119#0#PHP" expanded="true" />
+            <element signature="e#2125#2191#0#PHP" expanded="true" />
+            <element signature="e#2197#2238#0#PHP" expanded="true" />
+            <element signature="e#2244#2322#0#PHP" expanded="true" />
+            <element signature="e#2328#2406#0#PHP" expanded="true" />
+            <element signature="e#2412#3220#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -587,6 +584,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -594,6 +592,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -732,18 +731,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -751,13 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Librarian/Charging/Domain/AccountRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -778,6 +764,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -785,9 +772,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -802,6 +787,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Librarian/Charging/Domain/AccountRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Librarian/Charging/Domain/AccountState.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -812,22 +805,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Librarian/Charging/Domain/Account.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="138" column="1" lean-forward="true" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
+        <state relative-caret-position="475">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="e#882#1195#0#PHP" expanded="true" />
-            <element signature="e#1201#1353#0#PHP" expanded="true" />
-            <element signature="e#1359#1531#0#PHP" expanded="true" />
-            <element signature="e#1537#1621#0#PHP" expanded="true" />
-            <element signature="e#1627#1840#0#PHP" expanded="true" />
-            <element signature="e#1846#1914#0#PHP" expanded="true" />
-            <element signature="e#1920#2115#0#PHP" expanded="true" />
-            <element signature="e#2121#2187#0#PHP" expanded="true" />
-            <element signature="e#2193#2234#0#PHP" expanded="true" />
-            <element signature="e#2240#2318#0#PHP" expanded="true" />
-            <element signature="e#2324#2402#0#PHP" expanded="true" />
-            <element signature="e#2408#3216#0#PHP" expanded="true" />
+            <element signature="e#1201#1357#0#PHP" expanded="true" />
+            <element signature="e#1363#1535#0#PHP" expanded="true" />
+            <element signature="e#1541#1625#0#PHP" expanded="true" />
+            <element signature="e#1631#1844#0#PHP" expanded="true" />
+            <element signature="e#1850#1918#0#PHP" expanded="true" />
+            <element signature="e#1924#2119#0#PHP" expanded="true" />
+            <element signature="e#2125#2191#0#PHP" expanded="true" />
+            <element signature="e#2197#2238#0#PHP" expanded="true" />
+            <element signature="e#2244#2322#0#PHP" expanded="true" />
+            <element signature="e#2328#2406#0#PHP" expanded="true" />
+            <element signature="e#2412#3220#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
