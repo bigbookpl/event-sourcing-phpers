@@ -17,6 +17,7 @@ class AccountCharged extends AggregateChanged
         );
     }
 
+
     public function money()
     {
         return new Money(
