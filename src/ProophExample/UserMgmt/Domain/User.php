@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+namespace ProophExample\UserMgmt\Domain;
 
 use Assert\Assertion;
 use Ramsey\Uuid\Uuid;
@@ -51,6 +52,7 @@ class User extends \Prooph\EventSourcing\AggregateRoot
                 $this->name = $event->name();
                 break;
             case UserWasRenamed::class:
+                /** @var UserWasRenamed $event */
                 $this->name = $event->newName();
                 break;
         }

@@ -19,157 +19,157 @@ namespace My\Model {
     use Prooph\EventSourcing\AggregateChanged;
     use Prooph\EventSourcing\AggregateRoot;
     use Ramsey\Uuid\Uuid;
-
-    class User extends AggregateRoot
-    {
-        /**
-         * @var Uuid
-         */
-        private $uuid;
-
-        /**
-         * @var string
-         */
-        private $name;
-
-        /**
-         * ARs should be created via static factory methods
-         */
-        public static function nameNew(string $username): User
-        {
-            //Perform assertions before raising a event
-            Assertion::notEmpty($username);
-
-            $uuid = Uuid::uuid4();
-
-            //AggregateRoot::__construct is defined as protected so it can be called in a static factory of
-            //an extending class
-            $instance = new self();
-
-            //Use AggregateRoot::recordThat method to apply a new Event
-            $instance->recordThat(UserWasCreated::occur($uuid->toString(), ['name' => $username]));
-
-            return $instance;
-        }
-
-        public function userId(): Uuid
-        {
-            return $this->uuid;
-        }
-
-        public function name(): string
-        {
-            return $this->name;
-        }
-
-        public function changeName(string $newName): void
-        {
-            Assertion::notEmpty($newName);
-
-            if ($newName !== $this->name) {
-                $this->recordThat(UserWasRenamed::occur(
-                    $this->uuid->toString(),
-                    ['new_name' => $newName, 'old_name' => $this->name]
-                ));
-            }
-        }
-
-        /**
-         * Every AR needs a hidden method that returns the identifier of the AR as a string
-         */
-        protected function aggregateId(): string
-        {
-            return $this->uuid->toString();
-        }
-
-        protected function apply(AggregateChanged $event): void
-        {
-            switch (get_class($event)) {
-                case UserWasCreated::class:
-                    //Simply assign the event payload to the appropriate properties
-                    $this->uuid = Uuid::fromString($event->aggregateId());
-                    $this->name = $event->username();
-                    break;
-                case UserWasRenamed::class:
-                    $this->name = $event->newName();
-                    break;
-            }
-        }
-    }
-
-    /**
-     * ProophEventSourcing domain events are of the type AggregateChanged
-     */
-    class UserWasCreated extends AggregateChanged
-    {
-        public function username(): string
-        {
-            return $this->payload['name'];
-        }
-    }
-
-    /**
-     * ProophEventSourcing domain events are of the type AggregateChanged
-     */
-    class UserWasRenamed extends AggregateChanged
-    {
-        public function newName(): string
-        {
-            return $this->payload['new_name'];
-        }
-
-        public function oldName(): string
-        {
-            return $this->payload['old_name'];
-        }
-    }
-
-    /**
-     * Simple interface for a user repository
-     */
-    interface UserRepository
-    {
-        public function save(User $user): void;
-
-        public function get(Uuid $uuid): ?User;
-    }
-}
-
-namespace My\Infrastructure {
-    use My\Model\User;
-    use My\Model\UserRepository;
-    use Prooph\EventSourcing\Aggregate\AggregateRepository;
-    use Prooph\EventSourcing\Aggregate\AggregateType;
-    use Prooph\EventSourcing\EventStoreIntegration\AggregateTranslator;
-    use Prooph\EventStore\EventStore;
-    use Ramsey\Uuid\Uuid;
-
-    class UserRepositoryImpl extends AggregateRepository implements UserRepository
-    {
-        public function __construct(EventStore $eventStore)
-        {
-            //We inject a Prooph\EventSourcing\EventStoreIntegration\AggregateTranslator that can handle our AggregateRoots
-            parent::__construct(
-                $eventStore,
-                AggregateType::fromAggregateRootClass('My\Model\User'),
-                new AggregateTranslator(),
-                null, //We don't use a snapshot store in the example
-                null, //Also a custom stream name is not required
-                true //But we enable the "one-stream-per-aggregate" mode
-            );
-        }
-
-        public function save(User $user): void
-        {
-            $this->saveAggregateRoot($user);
-        }
-
-        public function get(Uuid $uuid): ?User
-        {
-            return $this->getAggregateRoot($uuid->toString());
-        }
-    }
-}
+//
+//    class User extends AggregateRoot
+//    {
+//        /**
+//         * @var Uuid
+//         */
+//        private $uuid;
+//
+//        /**
+//         * @var string
+//         */
+//        private $name;
+//
+//        /**
+//         * ARs should be created via static factory methods
+//         */
+//        public static function nameNew(string $username): User
+//        {
+//            //Perform assertions before raising a event
+//            Assertion::notEmpty($username);
+//
+//            $uuid = Uuid::uuid4();
+//
+//            //AggregateRoot::__construct is defined as protected so it can be called in a static factory of
+//            //an extending class
+//            $instance = new self();
+//
+//            //Use AggregateRoot::recordThat method to apply a new Event
+//            $instance->recordThat(UserWasCreated::occur($uuid->toString(), ['name' => $username]));
+//
+//            return $instance;
+//        }
+//
+//        public function userId(): Uuid
+//        {
+//            return $this->uuid;
+//        }
+//
+//        public function name(): string
+//        {
+//            return $this->name;
+//        }
+//
+//        public function changeName(string $newName): void
+//        {
+//            Assertion::notEmpty($newName);
+//
+//            if ($newName !== $this->name) {
+//                $this->recordThat(UserWasRenamed::occur(
+//                    $this->uuid->toString(),
+//                    ['new_name' => $newName, 'old_name' => $this->name]
+//                ));
+//            }
+//        }
+//
+//        /**
+//         * Every AR needs a hidden method that returns the identifier of the AR as a string
+//         */
+//        protected function aggregateId(): string
+//        {
+//            return $this->uuid->toString();
+//        }
+//
+//        protected function apply(AggregateChanged $event): void
+//        {
+//            switch (get_class($event)) {
+//                case UserWasCreated::class:
+//                    //Simply assign the event payload to the appropriate properties
+//                    $this->uuid = Uuid::fromString($event->aggregateId());
+//                    $this->name = $event->username();
+//                    break;
+//                case UserWasRenamed::class:
+//                    $this->name = $event->newName();
+//                    break;
+//            }
+//        }
+//    }
+//
+//    /**
+//     * ProophEventSourcing domain events are of the type AggregateChanged
+//     */
+//    class UserWasCreated extends AggregateChanged
+//    {
+//        public function username(): string
+//        {
+//            return $this->payload['name'];
+//        }
+//    }
+//
+//    /**
+//     * ProophEventSourcing domain events are of the type AggregateChanged
+//     */
+//    class UserWasRenamed extends AggregateChanged
+//    {
+//        public function newName(): string
+//        {
+//            return $this->payload['new_name'];
+//        }
+//
+//        public function oldName(): string
+//        {
+//            return $this->payload['old_name'];
+//        }
+//    }
+//
+//    /**
+//     * Simple interface for a user repository
+//     */
+//    interface UserRepository
+//    {
+//        public function save(User $user): void;
+//
+//        public function get(Uuid $uuid): ?User;
+//    }
+//}
+//
+//namespace My\Infrastructure {
+//    use My\Model\User;
+//    use My\Model\UserRepository;
+//    use Prooph\EventSourcing\Aggregate\AggregateRepository;
+//    use Prooph\EventSourcing\Aggregate\AggregateType;
+//    use Prooph\EventSourcing\EventStoreIntegration\AggregateTranslator;
+//    use Prooph\EventStore\EventStore;
+//    use Ramsey\Uuid\Uuid;
+//
+//    class UserRepositoryImpl extends AggregateRepository implements UserRepository
+//    {
+//        public function __construct(EventStore $eventStore)
+//        {
+//            //We inject a Prooph\EventSourcing\EventStoreIntegration\AggregateTranslator that can handle our AggregateRoots
+//            parent::__construct(
+//                $eventStore,
+//                AggregateType::fromAggregateRootClass('My\Model\User'),
+//                new AggregateTranslator(),
+//                null, //We don't use a snapshot store in the example
+//                null, //Also a custom stream name is not required
+//                true //But we enable the "one-stream-per-aggregate" mode
+//            );
+//        }
+//
+//        public function save(User $user): void
+//        {
+//            $this->saveAggregateRoot($user);
+//        }
+//
+//        public function get(Uuid $uuid): ?User
+//        {
+//            return $this->getAggregateRoot($uuid->toString());
+//        }
+//    }
+//}
 
 namespace {
     //Set up an EventStore with an InMemoryAdapter (Only useful for testing, persistent implementations of ProophEventStore are available)
