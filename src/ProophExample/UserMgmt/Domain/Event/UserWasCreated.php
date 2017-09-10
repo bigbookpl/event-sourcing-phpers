@@ -1,5 +1,6 @@
 <?php
 
+namespace ProophExample\UserMgmt\Domain\Event;
 
 use Prooph\EventSourcing\AggregateChanged;
 
@@ -11,10 +12,8 @@ class UserWasCreated extends AggregateChanged
         return static::occur($uuid, ['name' => $name]);
     }
 
-    public function username()
-    {
+    public function name(): string {
         return $this->payload['name'];
     }
 
-    //raczej dodac metode name()
 }

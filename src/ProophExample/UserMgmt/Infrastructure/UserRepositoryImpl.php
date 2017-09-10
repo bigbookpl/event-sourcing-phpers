@@ -1,5 +1,6 @@
 <?php
 
+namespace ProophExample\UserMgmt\Infrastructure;
 
 use Prooph\EventSourcing\Aggregate\AggregateRepository;
 use Prooph\EventSourcing\Aggregate\AggregateType;
@@ -9,15 +10,19 @@ use ProophExample\UserMgmt\Domain\User;
 use ProophExample\UserMgmt\Domain\UserRepository;
 use Ramsey\Uuid\Uuid;
 
-class UserRepositoryImp extends AggregateRepository implements UserRepository
+class UserRepositoryImpl  implements UserRepository
 {
+    /**
+     * @var AggregateRepository
+     */
+    private $repository;
 
     /**
      * UserRepositoryImp constructor.
      */
     public function __construct(EventStore $eventStore)
     {
-        parent::__construct(
+        $this->repository = new AggregateRepository(
             $eventStore,
             AggregateType::fromAggregateRootClass(User::class),
             new AggregateTranslator()
@@ -26,11 +31,11 @@ class UserRepositoryImp extends AggregateRepository implements UserRepository
 
     public function get(Uuid $uuid): ?User
     {
-        return $this->getAggregateRoot($uuid->toString());
+        return $this->repository->getAggregateRoot($uuid->toString());
     }
 
     public function save(User $user): void
     {
-        $this->saveAggregateRoot($user);
+        $this->repository->saveAggregateRoot($user);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+namespace ProophExample\UserMgmt\Domain\Event;
+
 use Prooph\EventSourcing\AggregateChanged;
 
 class UserWasRenamed extends AggregateChanged
